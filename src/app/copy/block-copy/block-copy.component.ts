@@ -17,10 +17,9 @@ import { CopyService } from '../copy-service/copy.service';
 })
 
 export class BlockCopyComponent implements OnInit {
-  @Input('label') label: string = 'Token';
+  @Input('label') label: string;
   @Input('token') token: string = 'Missing \'token\' @Input property';
   @Input('copyBtnTxt') copyBtnTxt: string = 'Copy';
-  @Input('expandBtnAriaLabel') expandBtnAriaLabel: string = 'Expand Copy Container';
   @Input('tokenPanelOpen') tokenPanelOpen: boolean = false;
 
   @Output('copiedToClipboard') copiedToClipboard = new EventEmitter();
@@ -52,6 +51,14 @@ export class BlockCopyComponent implements OnInit {
       } else {
         console.error(`Failed to copy ${this.label}`);
       }
+  }
+
+  expandBtnAriaLabel(componentLabel: string): string {
+    return `Expand ${componentLabel} Container`;
+  }
+
+  copyBtnAriaLabel(componentLabel: string): string {
+    return `Copy ${componentLabel}`;
   }
 
   ngOnInit() {

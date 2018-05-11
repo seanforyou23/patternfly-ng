@@ -1,7 +1,7 @@
 <div class="padding-15">
     <div class="row">
       <div class="col-sm-12">
-        <h4>Block Level Copy Component Examples</h4>
+        <h4>Inline Copy Component Examples</h4>
         <hr>
       </div>
     </div>
@@ -9,7 +9,7 @@
       <div class="col-sm-12">
         <div class="form-group">
           <h5>Basic example</h5>
-          <p>During registration, enter this callback URL:
+          <p>Inline copy features an inline-flex container
             <pfng-inline-copy
               [token]="example01.token"
               [label]="example01.label"
@@ -17,11 +17,9 @@
           </p>
           <div class="row grid-example">
             <div class="col-sm-6">
-              <h5>In between text example</h5>
-              <p><pfng-inline-copy
-                [token]="example02.token"
-                [label]="example02.label"></pfng-inline-copy>
-                This example illustrates how you can control various bits of text within the component.</p>
+              <h5>Flow content example</h5>
+              <p>Accessibility of web content requires semantic information about widgets, structures, and behaviors, in order to allow assistive technologies to convey appropriate information to persons with disabilities.
+                <pfng-inline-copy [token]="example02.token" [label]="example02.label"></pfng-inline-copy> These semantics are designed to allow an author to properly convey user interface behaviors and structural information to assistive technologies in document-level markup.</p>
             </div>
             <div class="col-sm-6">
               <h5>Wrapping Example</h5>
@@ -48,36 +46,3 @@
       </tabset>
     </div>
   </div>
-
-
-
-
-
-<!-- <h3>Inline Copy Component Example</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<pfng-inline-copy></pfng-inline-copy></p> -->
-
-<!-- <h3>Inline Copy Component Example</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat <pfng-inline-copy></pfng-inline-copy>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-
-<!-- <h3>OAuth Application Management</h3>
-<p>During registration, enter this callback URL:
-    <pfng-inline-copy
-      [token]="example01.token"
-      [label]="example01.label"
-      [copyBtnTxt]="example01.copyBtnTxt"></pfng-inline-copy>
-</p>
-
-<h3>OAuth Application Management</h3>
-<p>During registration, enter this callback URL:
-    <pfng-inline-copy
-      [label]="example01.label"
-      [copyBtnTxt]="example01.copyBtnTxt"></pfng-inline-copy>
-</p>
-
-<h3>OAuth Application Management</h3>
-<p>During registration, enter this callback URL:
-    <pfng-inline-copy
-      [token]="null"
-      [label]="example01.label"
-      [copyBtnTxt]="example01.copyBtnTxt"></pfng-inline-copy>
-</p> -->

@@ -1,8 +1,10 @@
 <span
-  class="inline-copy"
-  [ngClass]="{'max-width': maxWidth}"
-  [attr.aria-label]="label">
-  <span class="token-cont">
+  class="inline-copy">
+  <span
+    class="token-cont"
+    data-toggle="tooltip"
+    data-placement="top"
+    [tooltip]="label">
     {{token}}
   </span>
   <button

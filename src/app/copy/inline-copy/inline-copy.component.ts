@@ -20,7 +20,6 @@ export class InlineCopyComponent implements OnInit {
   @Input('label') label: string;
   @Input('token') token: string;
   @Input('copyBtnTxt') copyBtnTxt: string = 'Copy';
-  @Input('maxWidth') maxWidth: string;
 
   @Output('copiedToClipboard') copiedToClipboard = new EventEmitter();
 
