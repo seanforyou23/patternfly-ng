@@ -15,6 +15,8 @@ import { NavbarModule } from './navbar/navbar.module';
 //  import example modules
 import { AboutModalExampleModule } from '../app/modal/example/about-modal-example.module';
 import { ActionExampleModule } from '../app/action/example/action-example.module';
+import { BlockCopyExampleModule } from '../app/copy/block-copy/example/block-copy-example.module';
+import { InlineCopyExampleModule } from '../app/copy/inline-copy/example/inline-copy-example.module';
 import { CardExampleModule } from '../app/card/basic-card/example/card-example.module';
 import { CopyModule } from '../app/copy/copy.module';
 import { DonutExampleModule } from '../app/chart/donut/example/donut-example.module';
@@ -55,6 +57,8 @@ from '../app/navigation/application-launcher/example/application-launcher-exampl
     ActionExampleModule,
     AppRoutingModule,
     ApplicationLauncherExampleModule,
+    BlockCopyExampleModule,
+    InlineCopyExampleModule,
     BrowserModule,
     CardExampleModule,
     CopyModule,

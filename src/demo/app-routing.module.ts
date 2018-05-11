@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AboutModalExampleComponent } from '../app/modal/example/about-modal-example.component';
 import { ActionExampleComponent } from '../app/action/example/action-example.component';
-import { BlockCopyComponent } from '../app/copy/block-copy/block-copy.component';
+import { BlockCopyExampleComponent } from '../app/copy/block-copy/example/block-copy-example.component';
 import { CardExampleComponent } from '../app/card/basic-card/example/card-example.component';
 import { DonutExampleComponent } from '../app/chart/donut/example/donut-example.component';
 import { EmptyStateExampleComponent } from '../app/empty-state/example/empty-state-example.component';
 import { FilterExampleComponent } from '../app/filter/example/filter-example.component';
 import { InfoStatusCardExampleComponent }
   from '../app/card/info-status-card/example/info-status-card-example.component';
-import { InlineCopyComponent } from '../app/copy/inline-copy/inline-copy.component';
+import { InlineCopyExampleComponent } from '../app/copy/inline-copy/example/inline-copy-example.component';
 import { InlineNotificationExampleComponent }
   from '../app/notification/inline-notification/example/inline-notification-example.component';
 import { ListExampleComponent } from '../app/list/basic-list/example/list-example.component';
@@ -50,7 +50,7 @@ const routes: Routes = [{
     component: ActionExampleComponent
   }, {
     path: 'blockcopy',
-    component: BlockCopyComponent
+    component: BlockCopyExampleComponent
   }, {
     path: 'card',
     component: CardExampleComponent
@@ -62,7 +62,7 @@ const routes: Routes = [{
     component: InfoStatusCardExampleComponent
   }, {
     path: 'inlinecopy',
-    component: InlineCopyComponent
+    component: InlineCopyExampleComponent
   }, {
     path: 'emptystate',
     component: EmptyStateExampleComponent

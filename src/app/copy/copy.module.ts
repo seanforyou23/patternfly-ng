@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { CopyService } from './copy-service/copy.service';
 import { BlockCopyComponent } from './block-copy/block-copy.component';
 import { InlineCopyComponent } from './inline-copy/inline-copy.component';
 
@@ -12,6 +13,7 @@ export {
 @NgModule({
   imports: [CommonModule],
   declarations: [BlockCopyComponent, InlineCopyComponent],
-  exports: [BlockCopyComponent, InlineCopyComponent]
+  exports: [BlockCopyComponent, InlineCopyComponent],
+  providers: [CopyService]
 })
 export class CopyModule {}

@@ -1,1 +1,14 @@
-<h1>hey ma, I'm an inline copy component!</h1>
+<span
+  class="inline-copy"
+  [ngClass]="{'max-width': maxWidth}"
+  [attr.aria-label]="label">
+  <span class="token-cont">
+    {{token}}
+  </span>
+  <button
+    class="copy-btn"
+    [attr.aria-label]="copyBtnTxt + ' ' + label"
+    (click)="copyTokenToClipboard()">
+    <i class="fa fa-copy"></i>
+  </button>
+</span>
