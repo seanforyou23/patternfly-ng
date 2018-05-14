@@ -1,20 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-// import { Logger } from 'ngx-base';
-
 import { CopyService } from './copy.service';
 
 describe('CopyService', () => {
 
   let service: CopyService;
-  // let mockLogger: any = jasmine.createSpyObj('Logger', ['error']);
   let mockElement: any = document.createElement('textarea');
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         CopyService
-        // { provide: Logger, useValue: mockLogger }
       ]
     });
     service = TestBed.get(CopyService);
@@ -22,6 +18,7 @@ describe('CopyService', () => {
   });
 
   describe('#copy', () => {
+
     it('should create a textarea dom element', () => {
       service.copy('foobar');
       expect(service.dom.createElement).toHaveBeenCalledWith('textarea');
@@ -38,11 +35,11 @@ describe('CopyService', () => {
       expect(result).toBeTruthy();
     });
 
-    it('should return false and log any errors if the dom copy command has failed', () => {
-      spyOn(service.dom, 'execCommand').and.throwError('mock-error');
+    it('should return false if the dom copy command has failed', () => {
+      spyOn(service.dom, 'execCommand').and.throwError('expected-test-error');
       let result = service.copy('foobar');
-      // expect(mockLogger.error).toHaveBeenCalledWith(Error('mock-error'));
       expect(result).toBeFalsy();
+
     });
   });
 
