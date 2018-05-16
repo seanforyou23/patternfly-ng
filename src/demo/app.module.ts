@@ -19,6 +19,7 @@ import { BlockCopyExampleModule } from '../app/copy/block-copy/example/block-cop
 import { InlineCopyExampleModule } from '../app/copy/inline-copy/example/inline-copy-example.module';
 import { CardExampleModule } from '../app/card/basic-card/example/card-example.module';
 import { CopyModule } from '../app/copy/copy.module';
+import { CopyServiceExampleModule } from '../app/copy/copy-service/example/copy-service-example.module';
 import { DonutExampleModule } from '../app/chart/donut/example/donut-example.module';
 import { EmptyStateExampleModule } from '../app/empty-state/example/empty-state-example.module';
 import { FilterExampleModule } from '../app/filter/example/filter-example.module';
@@ -62,6 +63,7 @@ from '../app/navigation/application-launcher/example/application-launcher-exampl
     BrowserModule,
     CardExampleModule,
     CopyModule,
+    CopyServiceExampleModule,
     DemoComponentsModule,
     DonutExampleModule,
     EmptyStateExampleModule,

@@ -39,7 +39,6 @@ export class CopyService {
     return result;
   }
 
-  // Private
   private handleError(error: any): void {
     console.error(error);
   }

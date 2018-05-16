@@ -53,10 +53,16 @@ export class BlockCopyComponent implements OnInit {
       }
   }
 
+  /**
+   * Define format for expand button's aria label
+   */
   expandBtnAriaLabel(componentLabel: string): string {
     return `Expand ${componentLabel} Container`;
   }
 
+  /**
+   * Define format for copy button's aria label
+   */
   copyBtnAriaLabel(componentLabel: string): string {
     return `Copy ${componentLabel}`;
   }

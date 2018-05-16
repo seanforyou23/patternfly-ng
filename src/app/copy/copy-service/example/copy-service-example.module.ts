@@ -1,17 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NotificationModule } from '../../../notification/notification.module';
-
 import { TabsetConfig, TabsModule } from 'ngx-bootstrap/tabs';
+
+import { NotificationModule } from '../../../notification/notification.module';
 
 import { DemoComponentsModule } from '../../../../demo/components/demo-components.module';
 import { CopyModule } from '../../copy.module';
-import { BlockCopyExampleComponent } from './block-copy-example.component';
+import { CopyService } from '../copy.service';
+import { CopyServiceExampleComponent } from './copy-service-example.component';
+import { CopyServiceButtonExampleComponent } from './copy-service-button-example.component';
 
 @NgModule({
   declarations: [
-    BlockCopyExampleComponent
+    CopyServiceButtonExampleComponent,
+    CopyServiceExampleComponent
   ],
   imports: [
     CommonModule,
@@ -21,10 +24,10 @@ import { BlockCopyExampleComponent } from './block-copy-example.component';
     TabsModule.forRoot()
   ],
   providers: [
+    CopyService,
     TabsetConfig
   ]
 })
-
-export class BlockCopyExampleModule {
+export class CopyServiceExampleModule {
   constructor() {}
 }

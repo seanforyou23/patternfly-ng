@@ -5,6 +5,7 @@ import { AboutModalExampleComponent } from '../app/modal/example/about-modal-exa
 import { ActionExampleComponent } from '../app/action/example/action-example.component';
 import { BlockCopyExampleComponent } from '../app/copy/block-copy/example/block-copy-example.component';
 import { CardExampleComponent } from '../app/card/basic-card/example/card-example.component';
+import { CopyServiceExampleComponent } from '../app/copy/copy-service/example/copy-service-example.component';
 import { DonutExampleComponent } from '../app/chart/donut/example/donut-example.component';
 import { EmptyStateExampleComponent } from '../app/empty-state/example/empty-state-example.component';
 import { FilterExampleComponent } from '../app/filter/example/filter-example.component';
@@ -54,6 +55,9 @@ const routes: Routes = [{
   }, {
     path: 'card',
     component: CardExampleComponent
+  }, {
+    path: 'copyservice',
+    component: CopyServiceExampleComponent
   }, {
     path: 'donut',
     component: DonutExampleComponent

@@ -14,7 +14,10 @@
       </button>
 
       <div class="copy-preview-txt-cont">
-        <span>{{token}}</span>
+        <span
+          data-toggle="tooltip"
+          data-placement="top"
+          [tooltip]="label">{{token}}</span>
       </div>
 
       <button

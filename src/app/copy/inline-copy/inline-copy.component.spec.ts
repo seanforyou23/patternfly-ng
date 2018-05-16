@@ -1,5 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  fakeAsync,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { CopyService } from '../copy-service/copy.service';
 import { InlineCopyComponent } from './inline-copy.component';
@@ -12,24 +19,24 @@ class MockedCopyService {
 }
 
 interface ComponentConfig {
-  token: string,
-  label: string,
-  copyBtnTxt?: string
+  token: string;
+  label: string;
+  copyBtnTxt?: string;
 }
 
-fdescribe('Inline Copy Component - ', () => {
+describe('Inline Copy Component - ', () => {
 
   let inlineCopy: InlineCopyComponent;
   let fixture: ComponentFixture<InlineCopyComponent>;
   let componentConfig: ComponentConfig;
   let copyService: MockedCopyService;
 
-
   beforeEach(async(() => {
     copyService = new MockedCopyService();
 
     TestBed.configureTestingModule({
       declarations: [InlineCopyComponent],
+      imports: [TooltipModule.forRoot()],
       providers: [{ provide: CopyService, useValue: copyService }]
     })
     .compileComponents()
@@ -49,6 +56,7 @@ fdescribe('Inline Copy Component - ', () => {
   afterEach(() => {
     inlineCopy = null;
     fixture = null;
+    componentConfig = null;
     copyService = null;
   });
 
@@ -61,20 +69,20 @@ fdescribe('Inline Copy Component - ', () => {
   });
 
   it('should find a single token container element', () => {
-    let numTokenContainers = fixture.debugElement.queryAll(By.css('.token-cont')).length;
+    const numTokenContainers = fixture.debugElement.queryAll(By.css('.token-cont')).length;
     expect(numTokenContainers).toBe(1);
   });
 
   it('should find a single copy button', () => {
-    let numCopyBtns = fixture.debugElement.queryAll(By.css('.copy-btn')).length;
+    const numCopyBtns = fixture.debugElement.queryAll(By.css('.copy-btn')).length;
     expect(numCopyBtns).toBe(1);
   });
 
   it('should set the token container tooltip and text node', () => {
-    (<any>Object).assign(inlineCopy, {label: 'Foobar', token: 'Test Token'});
+    (<any>Object).assign(inlineCopy, componentConfig);
     fixture.detectChanges();
-    let tokenText = fixture.debugElement.children[0].nativeElement.innerText;
-    let tooltipText = fixture.debugElement.children[0].children[0].attributes.tooltip;
+    const tokenText = fixture.debugElement.children[0].nativeElement.innerText;
+    const tooltipText = fixture.debugElement.nativeElement.children[0].children[0].attributes[3].nodeValue;
     expect(tooltipText).toBe('Foobar');
     expect(tokenText).toContain('Test Token');
   });
@@ -82,15 +90,15 @@ fdescribe('Inline Copy Component - ', () => {
   it('should set the copy button aria label', () => {
     (<any>Object).assign(inlineCopy, componentConfig);
     fixture.detectChanges();
-    let ariaLabel = fixture.debugElement.children[0].children[1].attributes['aria-label'];
+    const ariaLabel = fixture.debugElement.children[0].children[1].attributes['aria-label'];
     expect(ariaLabel).toBe(`Copy ${componentConfig.label}`);
   });
 
   it('should incorporate button txt into its aria-label', () => {
-    let btnTxt = 'Grab';
+    const btnTxt = 'Grab';
     (<any>Object).assign(inlineCopy, componentConfig, {copyBtnTxt: btnTxt});
     fixture.detectChanges();
-    let ariaLabel = fixture.debugElement.children[0].children[1].attributes['aria-label'];
+    const ariaLabel = fixture.debugElement.children[0].children[1].attributes['aria-label'];
     expect(ariaLabel).toBe(`${btnTxt} ${inlineCopy.label}`);
   });
 
@@ -102,12 +110,14 @@ fdescribe('Inline Copy Component - ', () => {
   });
 
   it('should emit a copiedToClipboard event', () => {
-    spyOn(inlineCopy, 'copiedToClipboard');
-    let copyBtn = fixture.nativeElement.querySelector('.copy-btn');
-    copyBtn.click();
-    fixture.whenStable().then(() => {
-      expect(inlineCopy.copiedToClipboard).toHaveBeenCalled();
-    })
+    const spy = spyOn(inlineCopy.copiedToClipboard, 'emit');
+    (<any>Object).assign(inlineCopy, componentConfig);
+    inlineCopy.copiedToClipboard.subscribe(token => {
+      expect(spy).toHaveBeenCalled();
+      expect(token).toBe(`${inlineCopy.label} copied!`);
+    });
+    const copyBtn = fixture.debugElement.query(By.css('.copy-btn'));
+    copyBtn.triggerEventHandler('click', null);
   });
 
 });

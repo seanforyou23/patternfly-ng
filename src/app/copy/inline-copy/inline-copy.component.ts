@@ -1,7 +1,7 @@
 import {
   Component,
-  Input,
   EventEmitter,
+  Input,
   OnInit,
   Output,
   ViewEncapsulation
@@ -18,7 +18,7 @@ import { CopyService } from '../copy-service/copy.service';
 
 export class InlineCopyComponent implements OnInit {
   @Input('label') label: string;
-  @Input('token') token: string;
+  @Input('token') token: string = 'Missing \'token\' @Input property';
   @Input('copyBtnTxt') copyBtnTxt: string = 'Copy';
 
   @Output('copiedToClipboard') copiedToClipboard = new EventEmitter();
@@ -26,7 +26,8 @@ export class InlineCopyComponent implements OnInit {
   /**
    * The default constructor
    */
-  constructor(private copyService: CopyService) {}
+  constructor(
+    private copyService: CopyService) {}
 
   ngOnInit(): void {
     if (!this.label) throw new Error('Missing required @Input property \'label\'');

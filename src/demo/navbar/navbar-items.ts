@@ -37,7 +37,7 @@ export class NavbarItems {
     }, {
       id: 'blockcopy',
       path: 'blockcopy',
-      title: "Block Copy"
+      title: 'Block Copy'
     }]
   }, {
     id: 'emptystate',

@@ -37,6 +37,14 @@ export {
   SparklineData
 } from './chart/index';
 
+// CopyToClipboard
+export {
+  CopyModule,
+  CopyService,
+  BlockCopyComponent,
+  InlineCopyComponent
+} from './copy/index';
+
 // EmptyState
 export {
   EmptyStateComponent,

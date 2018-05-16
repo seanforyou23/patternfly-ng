@@ -17,30 +17,26 @@ describe('CopyService', () => {
     spyOn(service.dom, 'createElement').and.returnValue(mockElement);
   });
 
-  describe('#copy', () => {
+  it('should create a textarea dom element', () => {
+    service.copy('foobar');
+    expect(service.dom.createElement).toHaveBeenCalledWith('textarea');
+  });
 
-    it('should create a textarea dom element', () => {
-      service.copy('foobar');
-      expect(service.dom.createElement).toHaveBeenCalledWith('textarea');
-    });
+  it('should assign the value of the textarea to be the passed string', () => {
+    service.copy('foobar');
+    expect(mockElement.value).toBe('foobar');
+  });
 
-    it('should assign the value of the textarea to be the passed string', () => {
-      service.copy('foobar');
-      expect(mockElement.value).toBe('foobar');
-    });
+  it('should return true if the dom copy command has succeeded', () => {
+    spyOn(service.dom, 'execCommand').and.returnValue(true);
+    let result = service.copy('foobar');
+    expect(result).toBeTruthy();
+  });
 
-    it('should return true if the dom copy command has succeeded', () => {
-      spyOn(service.dom, 'execCommand').and.returnValue(true);
-      let result = service.copy('foobar');
-      expect(result).toBeTruthy();
-    });
-
-    it('should return false if the dom copy command has failed', () => {
-      spyOn(service.dom, 'execCommand').and.throwError('expected-test-error');
-      let result = service.copy('foobar');
-      expect(result).toBeFalsy();
-
-    });
+  it('should return false if the dom copy command has failed', () => {
+    spyOn(service.dom, 'execCommand').and.throwError('expected-test-error');
+    let result = service.copy('foobar');
+    expect(result).toBeFalsy();
   });
 
 });
