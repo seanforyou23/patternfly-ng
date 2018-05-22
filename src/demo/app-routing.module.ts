@@ -35,7 +35,6 @@ import { ToastNotificationExampleComponent }
 import { ToastNotificationListExampleComponent }
   from '../app/notification/toast-notification-list/example/toast-notification-list-example.component';
 import { ToolbarExampleComponent } from '../app/toolbar/example/toolbar-example.component';
-import { TreeListExampleComponent } from '../app/list/tree-list/example/tree-list-example.component';
 import { TruncateExampleComponent } from '../app/pipe/truncate/example/truncate-example.component';
 import { UtilizationDonutChartExampleComponent }
   from '../app/chart/donut-chart/utilization-donut-chart/example/utilization-donut-chart-example.component';
@@ -121,9 +120,6 @@ const routes: Routes = [{
   }, {
     path: 'toolbar',
     component: ToolbarExampleComponent
-  }, {
-    path: 'treelist',
-    component: TreeListExampleComponent
   }, {
     path: 'truncate',
     component: TruncateExampleComponent
