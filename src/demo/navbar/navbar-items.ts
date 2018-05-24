@@ -40,17 +40,9 @@ export class NavbarItems {
     path: 'filters',
     title: 'Filter'
   }, {
-    id: 'lists',
-    title: 'Lists',
-    children: [{
-      id: 'list',
-      path: 'list',
-      title: 'Basic List'
-    }, {
-      id: 'treelist',
-      path: 'treelist',
-      title: 'Tree List'
-    }]
+    id: 'list',
+    path: 'list',
+    title: 'List',
   }, {
     id: 'aboutmodal',
     path: 'aboutmodal',

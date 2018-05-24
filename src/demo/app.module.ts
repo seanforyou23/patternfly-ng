@@ -43,7 +43,6 @@ import { ToastNotificationExampleModule }
 import { ToastNotificationListExampleModule }
   from '../app/notification/toast-notification-list/example/toast-notification-list-example.module';
 import { ToolbarExampleModule } from '../app/toolbar/example/toolbar-example.module';
-import { TreeListExampleModule } from '../app/list/tree-list/example/tree-list-example.module';
 import { TruncateExampleModule } from '../app/pipe/truncate/example/truncate-example.module';
 import { VerticalNavigationExampleModule }
   from '../app/navigation/vertical-navigation/example/vertical-navigation-example.module';
@@ -83,7 +82,6 @@ import { WizardExampleModule } from '../app/wizard/example/wizard-example.module
     ToastNotificationExampleModule,
     ToastNotificationListExampleModule,
     ToolbarExampleModule,
-    TreeListExampleModule,
     TruncateExampleModule,
     UtilizationDonutChartExampleModule,
     VerticalNavigationExampleModule,
