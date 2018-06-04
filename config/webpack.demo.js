@@ -52,7 +52,7 @@ module.exports = {
         use: aotMode ? [
           '@ngtools/webpack'
         ] : [
-          'awesome-typescript-loader',
+          'ts-loader',
           'angular2-template-loader'
         ],
         exclude: [/\.(spec|e2e)\.ts$/]

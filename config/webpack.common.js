@@ -42,7 +42,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          'awesome-typescript-loader',
+          'ts-loader',
           'angular2-template-loader'
         ],
         exclude: [/\.spec\.ts$/]

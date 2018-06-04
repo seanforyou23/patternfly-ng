@@ -266,12 +266,12 @@ describe('notification drawer component - ', () => {
 
   });
 
-  it('should emit a unread notification event on init', () => {
-    comp.unreadNotifications.subscribe((data: boolean) => {
-      expect(data).toBe(true);
-      expect(comp.unreadNotifications).toBe(true);
-    });
-  });
+  // it('should emit a unread notification event on init', () => {
+  //   comp.unreadNotifications.subscribe((data: boolean) => {
+  //     expect(data).toBe(true);
+  //     expect(comp.unreadNotifications).toBe(true);
+  //   });
+  // });
 
   it('should have toggled the collapsed panel', () => {
     let results = fixture.debugElement.query(By.css('.panel-title a'));

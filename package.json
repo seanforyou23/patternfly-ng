@@ -83,7 +83,6 @@
     "ng2-dragula": "^1.5.0",
     "ngx-bootstrap": "^3.0.0"
   },
-  "//": "Note: Karma won't run without typescript 2.8.1",
   "//": "https://stackoverflow.com/questions/49468616/cannot-read-property-externalmoduleindicator-of-undefined-while-running-unit-t",
   "devDependencies": {
     "@angular-devkit/core": "0.6.3",
@@ -103,7 +102,6 @@
     "@types/jasmine": "2.8.7",
     "@types/lodash": "4.14.109",
     "angular2-template-loader": "0.6.2",
-    "awesome-typescript-loader": "5.0.0",
     "bootstrap": "3.3.7",
     "child_process": "1.0.2",
     "clean-webpack-plugin": "0.1.19",
@@ -170,6 +168,7 @@
     "stylus": "0.54.5",
     "to-string-loader": "1.1.5",
     "ts-helpers": "1.1.2",
+    "ts-loader": "^4.3.1",
     "ts-node": "6.0.3",
     "tslint": "5.10.0",
     "typedoc": "0.11.1",
