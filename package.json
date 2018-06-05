@@ -83,7 +83,6 @@
     "ng2-dragula": "^1.5.0",
     "ngx-bootstrap": "^3.0.0"
   },
-  "//": "https://stackoverflow.com/questions/49468616/cannot-read-property-externalmoduleindicator-of-undefined-while-running-unit-t",
   "devDependencies": {
     "@angular-devkit/core": "0.6.3",
     "@angular/animations": "6.0.2",
