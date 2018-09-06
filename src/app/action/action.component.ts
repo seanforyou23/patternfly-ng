@@ -10,7 +10,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 
-import { clone, cloneDeep, defaults, has, isEqual } from 'lodash';
+import { clone, cloneDeep, defaults, isEqual } from 'lodash';
 
 import { Action } from './action';
 import { ActionConfig } from './action-config';

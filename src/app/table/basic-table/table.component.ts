@@ -15,7 +15,6 @@ import { DragulaService } from 'ng2-dragula';
 import { DatatableComponent } from '@swimlane/ngx-datatable';
 
 import { NgxDataTableConfig } from './ngx-datatable-config';
-import { SortEvent } from '../../sort/sort-event';
 import { TableConfig } from './table-config';
 import { TableBase } from '../table-base';
 import { TableEvent } from '../table-event';

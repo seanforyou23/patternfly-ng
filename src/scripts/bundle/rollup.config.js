@@ -3,9 +3,7 @@
 
 const commonjs = require('rollup-plugin-commonjs');
 const ROLLUP_GLOBALS = require('./rollup.globals');
-const fs = require('fs-extra');
 const resolve = require('rollup-plugin-node-resolve');
-const rollup = require('rollup');
 
 export const LIB_NAME = 'patternfly-ng';
 export const PATH_SRC = 'dist/';
